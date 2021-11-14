@@ -1,6 +1,7 @@
 import { Table } from 'antd';
 import { ColumnsType } from 'antd/lib/table';
 import React, { useEffect, useState } from 'react';
+import API from '../lib/api';
 
 const columns: ColumnsType<Player> = [
   {
@@ -38,26 +39,13 @@ const columns: ColumnsType<Player> = [
 const PlayerList = () => {
   const [data, setData] = useState<Player[]>([]);
 
-  const fetchPlayer = () => {
-    fetch("http://localhost:8080/api/player/all")
-    // fetch("http://221.165.6.252:8080/api/player/all")
-      .then(function (result) {
-        return result.json();
-      })
-      .then(function (json) {
-        setData(json);
-        console.log("json->", json);
-        // data=json.data;
-      });
+  const fetchPlayers = async () => {
+    const res = await API.player.getPlayers();
+    res.data && setData(res.data);
   };
 
-  // const onChange = (pagination, filters, sorter, extra) => {
-  //   console.log("params->", pagination, filters, sorter, extra);
-  //   console.log("onclick data ->", data);
-  // };
-
   useEffect(() => {
-    fetchPlayer();
+    fetchPlayers();
   }, []);
 
   return (

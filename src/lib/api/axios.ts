@@ -4,12 +4,15 @@ type Method = 'get' | 'post' | 'put' | 'patch' | 'delete';
 
 const baseUrl = 'localhost:8080'
 
-const axiosFetch = (method: Method, url: string, parameter?: any) => {
-  const res = axios({
-    method: method,
+// TODO: Error Handling
+const axiosFetch = async <T>(method: Method, url: string, params?: any): Promise<ApiRes<T>> => {
+  const res = await axios({
+    method,
     url: baseUrl + url,
-    data: parameter
+    params
   });
+
+  return res.data;
 }
 
 export default axiosFetch;
