@@ -1,4 +1,4 @@
-export type player = {
+export type Player = {
     id : bigint,
     name : string,
 }

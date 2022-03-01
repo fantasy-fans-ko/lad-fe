@@ -38,9 +38,9 @@ const TestContainer = () => {
     }
 
     const subscribe = () => {
-        client.current.subscribe('/topic/log/history', (data: any) => {
-            // console.log(JSON.parse(data.body));
-            // setContent(JSON.parse(data.body));
+        client.current.subscribe('/topic/bidLog/history', (data: any) => {
+            console.log(JSON.parse(data.body));
+            setContent(JSON.parse(data.body));
             // addContent(newMessage);
         });
     }
@@ -49,18 +49,18 @@ const TestContainer = () => {
         if (!client.current.connected)
             return;
 
-        client.current.publish({
-            destination: '/draft/start',
-        })
         // client.current.publish({
-        //     destination: '/draft/log/save',
-        //     body: JSON.stringify({
-        //         playerId: 1,
-        //         auctionId: 1,
-        //         price: 20,
-        //         bidderId: 1
-        //     }),
+        //     destination: '/draft/start',
         // })
+        client.current.publish({
+            destination: '/draft/bidLog/save',
+            body: JSON.stringify({
+                playerId: 1,
+                auctionId: 1,
+                price: 20,
+                bidderId: 1
+            }),
+        })
     }
 
     const disConnect = () => {
@@ -76,7 +76,7 @@ const TestContainer = () => {
                     </p>
                 </div>
                 <div>
-                    {time}
+                    sdlkfjsldkfj
                 </div>
                 <Container sendMessage={handler}/>
             </div>
