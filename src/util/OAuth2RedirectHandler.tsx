@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import { ACCESS_TOKEN } from '../lib/constants';
-import { useRecoilStateLoadable } from 'recoil';
+import { useRecoilStateLoadable, useSetRecoilState } from 'recoil';
 import { getUserSelector } from '../recoil/userState';
 import { User } from '../recoil/types/user';
 import Loading from '../components/Loading';
 import { removeCookie, setCookie, setExpiresTime } from './CookieHandler';
+import { authState } from '../recoil/authState';
+import { Auth } from '../recoil/types/auth';
 
 const OAuth2RedirectHandler = () => {
   const token: string | null = new URLSearchParams(location.search).get('token');
@@ -16,9 +18,11 @@ const OAuth2RedirectHandler = () => {
     expires: setExpiresTime(6)
   }) : removeCookie(ACCESS_TOKEN);
 
+  const setAuth = useSetRecoilState<Auth>(authState);
   const [userLoadable, setUserLoadable] = useRecoilStateLoadable<User | undefined>(getUserSelector);
 
   useEffect(() => {
+    setAuth({ isLogin: true });
     userLoadable.toPromise().then(data => setUserLoadable(data));
   }, []);
 
