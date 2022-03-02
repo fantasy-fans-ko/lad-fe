@@ -1,4 +1,4 @@
 export type Bidder = {
-    id : bigint,
-    price : bigint,
+    id : number,
+    price : number,
 }
