@@ -4,7 +4,7 @@ import LoginHome from '../components/LoginHome';
 import OAuth2RedirectHandler from '../util/OAuth2RedirectHandler';
 import NotFound from '../components/NotFound';
 import PrivateRoute from './PrivateRoute';
-import Layout from '../components/Layout';
+import DraftRoom from '../components/DraftRoom';
 import { useRecoilValue, useRecoilValueLoadable, useSetRecoilState } from 'recoil';
 import { Auth } from '../recoil/types/auth';
 import { authState, getAuthSelector } from '../recoil/authState';
@@ -28,7 +28,7 @@ const Routers = () => {
                element={<PrivateRoute />}
         >
           <Route path={'/'}
-                 element={<Layout />} />
+                 element={<DraftRoom />} />
         </Route>
         <Route path={'/login'}
                element={<LoginHome />}
