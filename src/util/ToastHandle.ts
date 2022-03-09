@@ -1,5 +1,5 @@
 import { useRecoilState } from 'recoil';
-import { toastState } from '../recoil/toastState';
+import { toastState } from '../recoil/ToastState';
 import { Toast } from '../recoil/types/toast';
 
 export const ToastHandle = () => {

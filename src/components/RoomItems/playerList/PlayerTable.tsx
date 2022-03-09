@@ -8,10 +8,10 @@ const PlayerTable = () => {
   const players = useRecoilValue<Player[]>(playerState);
 
   return (
-    <div className='flex flex-col overflow-x-hidden'>
+    <div className='flex flex-col overflow-x-hidden '>
       <div className='overflow-x-auto sm:-mx-6 lg:-mx-8'>
         <div className='inline-block min-w-full sm:px-6 lg:px-8'>
-          <table className=''>
+          <table className='w-full'>
             <thead className='bg-white border-b sticky top-0'>
             <TableColumn />
             </thead>

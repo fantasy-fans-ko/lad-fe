@@ -6,5 +6,9 @@ export const pageParamState = atom<PageParam>({
   default: {
     page: 1,
     size: 25,
+    sort: {
+      position: 'ASC',
+      rank: 'DESC',
+    }
   }
 });
