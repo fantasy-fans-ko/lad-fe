@@ -1,14 +1,9 @@
 import axios from 'axios';
-import qs from 'qs';
 import { ACCESS_TOKEN, API_BASE_URL } from '../constants';
 import { getCookie } from '../../util/CookieHandler';
 import { ToastHandle } from '../../util/ToastHandle';
 
 type Method = 'get' | 'post';
-
-// axios.defaults.paramsSerializer = (params) => {
-//   return qs.stringify(params, { arrayFormat: 'indices' }).replace(/%5B\d%5D=/g,'=');
-// };
 
 const axiosFetch = async <T>(method: Method, url: string, params?: any, data?: any): Promise<ApiRes<T>> => {
   const token: string = getCookie(ACCESS_TOKEN);
