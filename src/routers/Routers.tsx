@@ -7,9 +7,9 @@ import PrivateRoute from './PrivateRoute';
 import DraftRoom from '../components/DraftRoom';
 import { useRecoilValue, useRecoilValueLoadable, useSetRecoilState } from 'recoil';
 import { Auth } from '../recoil/types/auth';
-import { authState, getAuthSelector } from '../recoil/authState';
+import { authState, getAuthSelector } from '../recoil/AuthState';
 import { User } from '../recoil/types/user';
-import { getUserSelector } from '../recoil/userState';
+import { getUserSelector } from '../recoil/UserState';
 
 const Routers = () => {
   const auth = useRecoilValue<Auth>(authState);

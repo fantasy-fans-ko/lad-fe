@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import { ACCESS_TOKEN } from '../lib/constants';
 import { useRecoilStateLoadable, useSetRecoilState } from 'recoil';
-import { getUserSelector } from '../recoil/userState';
+import { getUserSelector } from '../recoil/UserState';
 import { User } from '../recoil/types/user';
 import Loading from '../components/Loading';
 import { removeCookie, setCookie, setExpiresTime } from './CookieHandler';
-import { authState } from '../recoil/authState';
+import { authState } from '../recoil/AuthState';
 import { Auth } from '../recoil/types/auth';
 
 const OAuth2RedirectHandler = () => {

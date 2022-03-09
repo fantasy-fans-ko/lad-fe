@@ -1,4 +1,6 @@
 export type Bidder = {
-    id : number,
-    price : number,
+  id: number,
+  nickname: string,
+  imagePath: string,
+  budget: number,
 }

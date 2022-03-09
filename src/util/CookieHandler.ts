@@ -3,8 +3,9 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 export const getCookie = (name: string) => {
-  if (cookies.get(name) != undefined)
+  if (cookies.get(name) !== undefined)
     return cookies.get(name);
+  return null;
 };
 
 export const setCookie = (name: string, value: string, options: any) => {
