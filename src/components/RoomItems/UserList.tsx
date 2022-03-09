@@ -1,6 +1,8 @@
+import React from 'react';
+
 const UserList = () => {
   return (
-    <div className={'basis-4/5 flex flex-row border border-solid border-gray-500'}>
+    <div className="basis-4/5 flex flex-row h-4/5">
       <div>
         User Image
       </div>
@@ -16,5 +18,12 @@ const UserList = () => {
     </div>
   );
 }
+
+// const UserItem = () => {
+//   return (
+//     <>
+//     </>
+//   );
+// }
 
 export default UserList;

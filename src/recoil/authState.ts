@@ -1,6 +1,6 @@
 import { atom, selector } from 'recoil';
 import { Auth } from './types/auth';
-import { getUserSelector } from './userState';
+import { getUserSelector } from './UserState';
 import { User } from './types/user';
 import { getCookie } from '../util/CookieHandler';
 import { ACCESS_TOKEN } from '../lib/constants';
