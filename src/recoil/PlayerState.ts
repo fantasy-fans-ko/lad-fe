@@ -9,6 +9,11 @@ export const playerState = atom<Player[]>({
   default: [],
 });
 
+export const selectPlayerState = atom<Player | null>({
+  key: 'selectPlayer',
+  default: null
+});
+
 export const getPlayerPage = selector<Page<Player[]> | undefined>({
   key: 'getPlayerPage',
   get: async ({ get }) => {
@@ -16,3 +21,5 @@ export const getPlayerPage = selector<Page<Player[]> | undefined>({
     return response.data;
   },
 });
+
+

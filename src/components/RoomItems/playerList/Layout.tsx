@@ -23,7 +23,7 @@ const PlayerList = () => {
   switch (players.state) {
     case 'hasValue':
       return (
-        <div className='basis-4/5 flex flex-col h-4/5'>
+        <div className='basis-5/6 flex flex-col h-5/6'>
           <Headers />
           <Search />
           <PlayerTable />

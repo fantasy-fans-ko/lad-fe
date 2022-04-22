@@ -6,8 +6,7 @@ import { Auth } from '../recoil/types/auth';
 
 const PrivateRoute = () => {
   const auth = useRecoilValue<Auth>(authState);
-
-  return auth.isLogin ? <Outlet /> : <Navigate to={'/login'} />;
+  return auth.isLogin ? <Outlet /> : <Navigate to='/login' />;
 };
 
 export default PrivateRoute;

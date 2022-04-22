@@ -1,7 +1,7 @@
 import React from 'react';
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { Player } from '../../../recoil/types/player';
-import { playerState } from '../../../recoil/PlayerState';
+import { playerState, selectPlayerState } from '../../../recoil/PlayerState';
 import TableColumn from './TableColumn';
 
 const PlayerTable = () => {
@@ -34,6 +34,7 @@ interface PropParam {
 }
 
 const TableData = ({ player }: PropParam) => {
+  const setSelectPlayer = useSetRecoilState<Player | null>(selectPlayerState);
   const tbody = {
     td: 'text-sm text-gray-900 font-light px-2 py-2 whitespace-nowrap border-r text-center',
   };
@@ -51,12 +52,12 @@ const TableData = ({ player }: PropParam) => {
     }
   };
 
-  const selectPlayer = () => {
-    console.log(player.name);
+  const onClickSelectPlayer = () => {
+    setSelectPlayer(player)
   }
 
   return (
-      <tr className='bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100 cursor-pointer' onClick={selectPlayer}>
+      <tr className='bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100 cursor-pointer' onClick={onClickSelectPlayer}>
         <td className={`${tbody.td}`}>{player.rankCurrent}</td>
         <td className={`${tbody.td}`}>{player.rankPre}</td>
         <td className={`${tbody.td}`}>

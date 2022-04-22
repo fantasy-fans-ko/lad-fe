@@ -7,9 +7,10 @@ const ToastContainer = () => {
   const toasts = useRecoilValue<Toast[]>(toastState);
 
   return (
-    <div className={'top-20 right-5 w-80 absolute z-99'}>
+    <div className='top-20 right-5 w-80 absolute z-99'>
       {
         toasts.map((toast: Toast) => (
+          /* eslint-disable react/jsx-props-no-spreading */
           <ToastItems key={toast.id} {...toast} />))
       }
     </div>
@@ -34,7 +35,7 @@ const ToastItems = (props: Toast) => {
   return (
     <div className={`${styles.divClass} ${isShow ? 'block' : 'hidden'}`}>
       <div
-        className={'flex flex-col justify-items-center justify-center rounded-lg w-full min-h-50 mr-2 mb-2 p-3 text-center text-base bg-tb text-white transition-all duration-300 ease animate-slide'}>
+        className='flex flex-col justify-items-center justify-center rounded-lg w-full min-h-50 mr-2 mb-2 p-3 text-center text-base bg-tb text-white transition-all duration-300 ease animate-slide'>
         {message}
       </div>
     </div>

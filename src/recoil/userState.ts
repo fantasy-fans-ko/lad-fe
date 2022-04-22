@@ -14,6 +14,6 @@ export const getUserSelector = selector<User | undefined>({
     return response.data ? response.data : undefined;
   },
   set: ({ set }, newValue) => {
-    newValue ? set<User | null>(userState, newValue) : userState;
+    return newValue ? set<User | null>(userState, newValue) : userState;
   }
 });
