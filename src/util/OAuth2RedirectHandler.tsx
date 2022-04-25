@@ -25,7 +25,10 @@ const OAuth2RedirectHandler = () => {
 
   useEffect(() => {
     setAuth({ isLogin: true });
-    userLoadable.toPromise().then(data => setUserLoadable(data));
+    userLoadable.toPromise().then(data => {
+      console.log(data);
+      setUserLoadable(data);
+    });
   }, []);
 
   switch (userLoadable.state) {

@@ -65,5 +65,5 @@
     "prettier": "^2.5.1",
     "tailwindcss": "^3.0.22"
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://54.180.86.197:8080"
 }

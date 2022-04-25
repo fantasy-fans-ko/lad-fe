@@ -496,6 +496,8 @@ dist
 # Serverless Webpack directories
 .webpack/
 
+build/
+
 # End of https://www.toptal.com/developers/gitignore/api/node
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,webstorm,rubymine,pycharm,intellij
