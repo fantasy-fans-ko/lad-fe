@@ -15,7 +15,7 @@ const Headers = () => {
   return (
     <div className='flex flex-row bg-gray-700 text-white items-stretch relative '>
       {
-        headerItems.length > 0 && headerItems.map(item => (
+        headerItems.map(item => (
           <HeaderItem key={item.id} name={item.name} />
         ))
       }

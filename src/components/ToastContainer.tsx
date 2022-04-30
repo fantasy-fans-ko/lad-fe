@@ -9,9 +9,9 @@ const ToastContainer = () => {
   return (
     <div className='top-20 right-5 w-80 absolute z-99'>
       {
-        toasts.map((toast: Toast) => (
+        toasts ? toasts.map((toast: Toast) => (
           /* eslint-disable react/jsx-props-no-spreading */
-          <ToastItems key={toast.id} {...toast} />))
+          <ToastItems key={toast.id} {...toast} />)) : null
       }
     </div>
   );

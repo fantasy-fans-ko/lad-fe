@@ -9,16 +9,16 @@ export const playerState = atom<Player[]>({
   default: [],
 });
 
-export const selectPlayerState = atom<Player | null>({
+export const selectPlayerState = atom<Player | undefined>({
   key: 'selectPlayer',
-  default: null
+  default: undefined
 });
 
 export const getPlayerPage = selector<Page<Player[]> | undefined>({
   key: 'getPlayerPage',
   get: async ({ get }) => {
-    const response = await API.player.getPlayerOfPage(get<PageParam>(pageParamState));
-    return response.data;
+    const response = await API.player.getPlayerOfPage(get<PageParam>(pageParamState)).then(data => data);
+    return response.data
   },
 });
 
