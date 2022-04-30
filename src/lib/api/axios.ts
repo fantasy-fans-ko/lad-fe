@@ -1,12 +1,14 @@
 import axios from 'axios';
 import { ACCESS_TOKEN, API_BASE_URL } from '../constants';
-import { getCookie } from '../../util/CookieHandler';
+// import { getCookie } from '../../util/CookieHandler';
 import { ToastHandle } from '../../util/ToastHandle';
+import { getStorage } from '../../util/StorageHandler';
 
 type Method = 'get' | 'post';
 
 const axiosFetch = async <T>(method: Method, url: string, params?: any, data?: any): Promise<ApiRes<T>> => {
-  const token: string = getCookie(ACCESS_TOKEN);
+  // const token: string = getCookie(ACCESS_TOKEN);
+  const token: string | null = getStorage(ACCESS_TOKEN);
   const { addToast } = ToastHandle();
 
   let res;
